@@ -5,8 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Consulta de crédito SCC Check: conheça nossas soluções</title>
   <meta name="description" content="Acesse informações negativas e positivas cruciais para tomar melhores decisões. Conheça os tipos de consulta, o comparativo dos relatórios e as soluções da SCC Check.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23e11670'/%3E%3C/svg%3E">
+  <link rel="icon" href="/assets/favicon-s.png" type="image/png">
+  <link rel="preload" as="image" href="/assets/logo-scc-check.webp" fetchpriority="high">
   <link rel="stylesheet" href="/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWBCSP30L3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-WWBCSP30L3");
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,"script","https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "1191390800509949");
+    fbq("track", "PageView");
+  </script>
 </head>
 <body>
   <svg class="sprite" aria-hidden="true">
@@ -24,7 +41,8 @@
 
   <header class="site-header">
     <div class="header-bar">
-      <img class="header-logo" src="/assets/header-logo.png" alt="SCC Check e Serasa Experian">
+      <img class="header-logo" src="/assets/logo-scc-check.webp" alt="scc check" width="183" height="30" decoding="async" fetchpriority="high">
+      <img class="header-badge" src="/assets/badge-parceiro-2025.webp" alt="Parceiro Destaque 2025" width="80" height="80" decoding="async">
     </div>
   </header>
 
@@ -32,7 +50,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap-wide hero-layout">
         <div class="hero-copy">
-          <h1 id="hero-title">Evite calotes! Consulte informações de pessoas e empresas no maior banco de dados do país</h1>
+          <h1 id="hero-title">Evite calotes! Consulte informações de pessoas e empresas no maior banco de dados do&nbsp;país</h1>
           <p class="hero-lead">Cadastre-se e veja como <span class="accent">reduzir os riscos</span> de inadimplência, calote, golpes e fraudes e defina sua relação com seus clientes <span class="accent">mais segura</span> para a sua empresa</p>
         </div>
         <div id="hero-form" class="hero-form">
@@ -47,23 +65,48 @@
           </div>
           <p class="reject-message" data-step="reject" hidden>Infelizmente não podemos ajudar, como parceiros Serasa atuamos apenas com empresas que fazem mais de 4 consultas mensais</p>
           <form class="lead-form" data-step="2" hidden>
-            <label class="field">
-              <span>Nome</span>
-              <input name="nome" type="text" autocomplete="name" required>
+            <label class="field" data-field="nome">
+              <span>Informe seu nome e sobrenome</span>
+              <input name="nome" type="text" autocomplete="name" placeholder="Nome">
+              <p class="field-error" data-error="nome" hidden>Informe nome e sobrenome.</p>
             </label>
-            <label class="field">
-              <span>Telefone</span>
-              <input name="telefone" type="tel" autocomplete="tel" required>
+            <label class="field" data-field="telefone">
+              <span>Informe seu telefone com WhatsApp</span>
+              <div data-phone-field></div>
+              <p class="field-error" data-error="telefone" hidden>Informe um telefone válido.</p>
             </label>
-            <button class="btn btn-primary" type="submit">Enviar</button>
+            <button class="btn btn-primary" type="submit">Fazer Consulta</button>
           </form>
         </div>
+      </div>
+      <div class="logo-strip" aria-label="Aprovado por empresas como">
+      <p class="logo-strip-title">Aprovado por empresas como</p>
+      <div class="logo-marquee">
+        <ul class="logo-track">
+          <li><img src="/assets/clients/fiat.webp" alt="fiat sala" width="106" height="21" decoding="async" fetchpriority="low"></li>
+          <li><img src="/assets/clients/bali.webp" alt="fiat bali" width="70" height="31" decoding="async" fetchpriority="low"></li>
+          <li><img src="/assets/clients/isidoro-automoveis.webp" alt="isidoro automóveis" width="72" height="21" decoding="async" fetchpriority="low"></li>
+          <li><img src="/assets/clients/gv.webp" alt="gran via" width="28" height="20" decoding="async" fetchpriority="low"></li>
+          <li><img src="/assets/clients/transportes1500.webp" alt="1500 transportes" width="102" height="17" decoding="async" fetchpriority="low"></li>
+          <li><img src="/assets/clients/sicredi.webp" alt="sicredi" width="82" height="21" decoding="async" fetchpriority="low"></li>
+          <li><img src="/assets/clients/sicoob-unicoob.webp" alt="sicoob unicoob" width="67" height="21" decoding="async" fetchpriority="low"></li>
+          <li><img src="/assets/clients/sicoob.webp" alt="sicoob" width="86" height="20" decoding="async" fetchpriority="low"></li>
+          <li aria-hidden="true"><img src="/assets/clients/fiat.webp" alt="" width="106" height="21" decoding="async" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/assets/clients/bali.webp" alt="" width="70" height="31" decoding="async" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/assets/clients/isidoro-automoveis.webp" alt="" width="72" height="21" decoding="async" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/assets/clients/gv.webp" alt="" width="28" height="20" decoding="async" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/assets/clients/transportes1500.webp" alt="" width="102" height="17" decoding="async" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/assets/clients/sicredi.webp" alt="" width="82" height="21" decoding="async" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/assets/clients/sicoob-unicoob.webp" alt="" width="67" height="21" decoding="async" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/assets/clients/sicoob.webp" alt="" width="86" height="20" decoding="async" loading="lazy"></li>
+        </ul>
+      </div>
       </div>
     </section>
 
     <section class="benefits" aria-labelledby="benefits-title">
       <div class="wrap">
-        <h2 id="benefits-title" class="section-heading">Quais os <span class="accent">benefícios</span> de utilizar nossas consultas em seu negócio?</h2>
+        <h2 id="benefits-title" class="section-heading">Quais os <span class="accent">benefícios</span> de utilizar nossas consultas em seu&nbsp;negócio?</h2>
         <p class="section-lead">Conheça as vantagens de utilizar essa solução.</p>
         <div class="benefit-grid">
           <article class="benefit">
@@ -104,7 +147,7 @@
 
     <section class="consultas" aria-labelledby="consultas-title">
       <div class="wrap">
-        <h2 id="consultas-title" class="section-heading">Tipos de <span class="accent">consultas</span></h2>
+        <h2 id="consultas-title" class="section-heading">Tipos de&nbsp;<span class="accent">consultas</span></h2>
         <p class="section-lead">Conheça os quatro tipos de consulta disponíveis</p>
         <div class="consulta-grid">
           <article class="consulta-card">
@@ -155,14 +198,14 @@
           </article>
         </div>
         <div class="center-action">
-          <a class="btn btn-primary btn-wide" href="#hero-form">Contratar agora</a>
+          <a class="btn btn-primary btn-wide" href="#hero-form">Fazer Consulta</a>
         </div>
       </div>
     </section>
 
     <section class="compare" id="comparativo" aria-labelledby="compare-title">
       <div class="wrap">
-        <h2 id="compare-title" class="section-heading compare-intro">O que a resposta de cada consulta mostra:</h2>
+        <h2 id="compare-title" class="section-heading compare-intro">O que a resposta de cada consulta&nbsp;mostra:</h2>
         <p class="section-lead">Conheça os quatro tipos de consultas disponíveis para o seu negócio e veja um comparativo dos itens que aparecem nos relatórios.</p>
         <div class="tabs" role="tablist" aria-label="Tipo de pessoa">
           <button class="tab is-active" type="button" role="tab" id="tab-pf" data-tab="pf" aria-selected="true" aria-controls="panel-pf">Pessoa Física</button>
@@ -242,7 +285,149 @@
               <rect x="3.5" y="5" width="17" height="15" rx="2"/>
               <path d="M8 3.5V7M16 3.5V7M3.5 10h17" stroke-linecap="round"/>
             </svg>
-            Agendar demonstração
+            Fazer Consulta
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="institutional" aria-labelledby="institutional-title">
+      <div class="wrap institutional-layout">
+        <div class="institutional-copy">
+          <p class="institutional-kicker">Institucional</p>
+          <h2 id="institutional-title">Nosso compromisso é te ajudar a reduzir a inadimplência em seu negócio a partir das nossas soluções de&nbsp;crédito!</h2>
+          <p>Consultar o histórico de crédito do seu cliente é um processo indispensável para sua empresa, independentemente do tamanho e segmento de atuação.</p>
+          <a class="btn" href="#hero-form">Consulte o CPF ou CNPJ do seu Cliente!</a>
+        </div>
+        <div class="institutional-media">
+          <button class="video-poster" type="button" data-institutional-video>
+            <img src="/assets/institucional.webp" alt="" width="458" height="406" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true"></span>
+            <span class="visually-hidden">Assistir ao vídeo institucional</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <div class="wrap">
+        <h2 id="testimonials-title" class="section-heading">Depoimentos dos <span class="accent">nossos&nbsp;clientes</span></h2>
+        <p class="section-lead">O que os nosso clientes dizem sobre nós</p>
+        <div class="testimonial-scroller" data-testimonials>
+          <article class="testimonial">
+            <div>
+              <h3>Feitep</h3>
+              <p class="testimonial-kicker">Ajuda a recuperar...</p>
+            </div>
+            <p class="testimonial-quote">A ferramenta tem nos ajudado na recuperação de crédito da nossa instituição, nos últimos meses tivemos um aumento na procuro por renegociações</p>
+            <div class="testimonial-person">
+              <img src="/assets/testimonials/feitep.png" alt="Foto da logo da empresa do Douglas Martins" width="56" height="56" loading="lazy" decoding="async">
+              <div>
+                <p class="person-name">Douglas Martins</p>
+                <p class="person-role">COORDENADOR FINANCEIRO</p>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <div>
+              <h3>G10</h3>
+              <p class="testimonial-kicker">Principal fornecedor...</p>
+            </div>
+            <p class="testimonial-quote">Nossa principal ferramenta de análise de crédito por conta da eficiência dos dados</p>
+            <div class="testimonial-person">
+              <img src="/assets/testimonials/g10.png" alt="Foto da logo da empresa do Aislan Velasco" width="56" height="56" loading="lazy" decoding="async">
+              <div>
+                <p class="person-name">Aislan Velasco</p>
+                <p class="person-role">COORDENADOR FINANCEIRO</p>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <div>
+              <h3>Revest</h3>
+              <p class="testimonial-kicker">Novas políticas de crédito...</p>
+            </div>
+            <p class="testimonial-quote">Baseado nos relatórios e índices, reduzimos nossa inadimplência e estamos mais assertivos nas conceções de crédito</p>
+            <div class="testimonial-person">
+              <img src="/assets/testimonials/revest.png" alt="Foto da logo da empresa do Flavio Azevedo" width="56" height="56" loading="lazy" decoding="async">
+              <div>
+                <p class="person-name">Flavio Azevedo</p>
+                <p class="person-role">DEPTO. ADMINISTRATIVO</p>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <div>
+              <h3>Potencial</h3>
+              <p class="testimonial-kicker">Nosso suporte...</p>
+            </div>
+            <p class="testimonial-quote">Suporte muito eficaz e resolutivo, o que garante maior segurança e agilidade no dia à dia da empresa</p>
+            <div class="testimonial-person">
+              <img src="/assets/testimonials/potencial.png" alt="Foto da logo da empresa do Gabriel C. Limão" width="56" height="56" loading="lazy" decoding="async">
+              <div>
+                <p class="person-name">Gabriel C. Limão</p>
+                <p class="person-role">DEPTO. FINANCEIRO</p>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <div>
+              <h3>Distrioeste</h3>
+              <p class="testimonial-kicker">Aprovar e vender mais...</p>
+            </div>
+            <p class="testimonial-quote">Tivemos uma melhora na aprovação de crédito permitindo vendas mais e melhor</p>
+            <div class="testimonial-person">
+              <img src="/assets/testimonials/distrioeste.png" alt="Foto da logo da empresa do Valeria Camara" width="56" height="56" loading="lazy" decoding="async">
+              <div>
+                <p class="person-name">Valeria Camara</p>
+                <p class="person-role">DEPTO. FINANCEIRO</p>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <div>
+              <h3>Pietrobon</h3>
+              <p class="testimonial-kicker">Negativação Serasa Experian...</p>
+            </div>
+            <p class="testimonial-quote">Auxilia na cobrança, quando um cliente é negativado na Serasa Experian, muitos se preocupam em estarem com o nome “sujo” e com isso, nos procuram para regularizar suas pendências</p>
+            <div class="testimonial-person">
+              <img src="/assets/testimonials/pietrobon.jpg" alt="Foto da logo da empresa do Sheila Manfroi" width="56" height="56" loading="lazy" decoding="async">
+              <div>
+                <p class="person-name">Sheila Manfroi</p>
+                <p class="person-role">DEPTO. FINANCEIRO</p>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <div>
+              <h3>Sarandi Tratores</h3>
+              <p class="testimonial-kicker">Resultado da Consulta...</p>
+            </div>
+            <p class="testimonial-quote">O Resultado das consultas é bem simples e totalmente compreensível</p>
+            <div class="testimonial-person">
+              <img src="/assets/testimonials/sarandi.png" alt="Foto da logo da empresa do Bruno Luis" width="56" height="56" loading="lazy" decoding="async">
+              <div>
+                <p class="person-name">Bruno Luis</p>
+                <p class="person-role">GERENTE FINANCEIRO</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="testimonial-nav">
+          <button class="carousel-btn" type="button" data-testimonials-prev aria-label="Depoimento anterior">
+            <svg class="icon" viewBox="0 0 20 21" aria-hidden="true"><use href="#icon-chevron"/></svg>
+          </button>
+          <button class="carousel-btn" type="button" data-testimonials-next aria-label="Próximo depoimento">
+            <svg class="icon" viewBox="0 0 20 21" aria-hidden="true"><use href="#icon-chevron"/></svg>
+          </button>
+        </div>
+        <div class="center-action">
+          <a class="btn btn-primary btn-wide" href="#hero-form">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <rect x="3.5" y="5" width="17" height="15" rx="2"/>
+              <path d="M8 3.5V7M16 3.5V7M3.5 10h17" stroke-linecap="round"/>
+            </svg>
+            Fazer Consulta
           </a>
         </div>
       </div>
@@ -250,7 +435,7 @@
 
     <section class="solutions" aria-labelledby="solutions-title">
       <div class="wrap">
-        <h2 id="solutions-title" class="section-heading">Conheça nossas soluções</h2>
+        <h2 id="solutions-title" class="section-heading">Conheça nossas&nbsp;soluções</h2>
         <p class="section-lead">Conheça nossos serviços para proteger sua empresa</p>
         <div class="solution-grid">
           <article class="solution">
@@ -303,10 +488,42 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <p>Líder em consultas e análise de crédito no Brasil.</p>
-      <p>Serasa Experian</p>
+      <img class="footer-badge" src="/assets/badge-parceiro-2025.webp" alt="Parceiro Destaque 2025" width="148" height="148" loading="lazy" decoding="async">
       <p>® 2026 SCC - Sistema de Consulta de Crédito Ltda - CNPJ: 08.300.713/0001-82</p>
     </div>
   </footer>
+
+  <div class="wa-widget">
+    <section class="wa-panel" id="wa-panel" hidden aria-label="Conversa">
+      <header class="wa-head">
+        <span class="wa-mark" aria-hidden="true">
+          <img src="/assets/whatsapp-logo.webp" alt="" width="40" height="40" decoding="async">
+        </span>
+        <strong>SCC Check</strong>
+        <button class="wa-close" type="button" aria-label="Fechar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4z"/></svg>
+        </button>
+      </header>
+      <div class="wa-log" aria-live="polite"></div>
+      <form class="wa-composer" hidden>
+        <p class="wa-error" hidden></p>
+        <div class="wa-composer-row">
+          <label class="wa-name" hidden>
+            <span class="visually-hidden">Nome</span>
+            <input name="nome" type="text" autocomplete="name" placeholder="Nome">
+          </label>
+          <div class="wa-phone" hidden></div>
+          <button class="wa-send" type="submit" aria-label="Enviar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.4 20.6 21 12 3.4 3.4 3.4 10l12 2-12 2z"/></svg>
+          </button>
+        </div>
+      </form>
+    </section>
+    <button class="wa-launcher" type="button" aria-expanded="false" aria-controls="wa-panel">
+      <img src="/assets/whatsapp-logo.webp" alt="" width="68" height="68" decoding="async">
+      <span class="visually-hidden">Abrir conversa</span>
+    </button>
+  </div>
 
   <script src="/script.js"></script>
 </body>
