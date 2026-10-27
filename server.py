@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Serve a página de consulta em / e /consulta na porta 8080."""
+"""Serve a página de consulta em / e /consulta na porta 6060."""
 
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-PORT = 8080
+PORT = 6060
 
 
 class ConsultaHandler(SimpleHTTPRequestHandler):

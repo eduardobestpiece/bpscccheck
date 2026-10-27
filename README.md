@@ -10,5 +10,5 @@ python3 server.py
 
 A página fica disponível em:
 
-- http://localhost:8080/
-- http://localhost:8080/consulta
+- http://localhost:6060/
+- http://localhost:6060/consulta
