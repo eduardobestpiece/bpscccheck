@@ -1,44 +1,3 @@
-const menu = document.querySelector("#mobile-menu");
-const menuToggle = document.querySelector(".menu-toggle");
-const menuClose = document.querySelector(".menu-close");
-
-function setMenu(open) {
-  if (!menu || !menuToggle) {
-    return;
-  }
-  menu.hidden = !open;
-  menuToggle.setAttribute("aria-expanded", String(open));
-  menuToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-  document.body.classList.toggle("menu-open", open);
-}
-
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
-    setMenu(menu.hidden);
-  });
-}
-
-if (menuClose) {
-  menuClose.addEventListener("click", () => {
-    setMenu(false);
-  });
-}
-
-if (menu) {
-  menu.addEventListener("click", (event) => {
-    if (event.target === menu) {
-      setMenu(false);
-    }
-  });
-}
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && menu && !menu.hidden) {
-    setMenu(false);
-    menuToggle.focus();
-  }
-});
-
 const tabs = Array.from(document.querySelectorAll("[data-tab]"));
 const panels = Array.from(document.querySelectorAll("[data-panel]"));
 
@@ -71,16 +30,42 @@ tabs.forEach((tab, index) => {
   });
 });
 
-const form = document.querySelector("#contact-form");
-const formStatus = document.querySelector("#form-status");
+const step1 = document.querySelector("[data-step='1']");
+const step2 = document.querySelector("[data-step='2']");
+const reject = document.querySelector("[data-step='reject']");
+const qualified = new Set(["mid", "high"]);
+const blocked = new Set(["low", "once"]);
 
-if (form) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!formStatus) {
+document.querySelectorAll("[data-choice]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const choice = button.dataset.choice;
+    if (blocked.has(choice)) {
+      step1.hidden = true;
+      step2.hidden = true;
+      reject.hidden = false;
       return;
     }
-    formStatus.hidden = false;
-    formStatus.textContent = "Este formulário é apenas visual. Nenhum dado foi enviado.";
+    if (!qualified.has(choice)) {
+      return;
+    }
+    step1.hidden = true;
+    reject.hidden = true;
+    step2.hidden = false;
+    const nameField = step2.querySelector("input[name='nome']");
+    if (nameField) {
+      nameField.focus();
+    }
+  });
+});
+
+if (step2) {
+  step2.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(step2);
+    const nome = String(data.get("nome") || "").trim();
+    const firstName = nome.split(/\s+/)[0] || "";
+    const message = `Olá, tudo bem? Me chamo ${firstName} e gostaria de contratar e entender mais sobre consultas recorrentes na Serasa`;
+    const url = `https://wa.me/5561981365986?text=${encodeURIComponent(message)}`;
+    window.location.assign(url);
   });
 }
