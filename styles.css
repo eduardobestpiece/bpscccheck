@@ -199,8 +199,15 @@ a {
 }
 
 .header-logo {
+  height: 26px;
+  width: auto;
+}
+
+.header-serasa {
   height: 30px;
   width: auto;
+  margin-left: auto;
+  margin-right: 96px;
 }
 
 .hero {
@@ -1178,7 +1185,12 @@ a {
   }
 
   .header-logo {
-    height: 26px;
+    height: 22px;
+  }
+
+  .header-serasa {
+    height: 22px;
+    margin-right: 96px;
   }
 
   .testimonial {
