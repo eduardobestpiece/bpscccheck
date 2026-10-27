@@ -1086,7 +1086,7 @@ a {
 }
 
 .institutional-copy h2 {
-  margin-top: 10px;
+  margin-top: 0;
   max-width: 640px;
   font-size: clamp(1.7rem, 3vw, 2.35rem);
   font-weight: 700;
@@ -1099,13 +1099,6 @@ a {
   margin-top: 16px;
   color: var(--muted);
   font-size: 1.05rem;
-}
-
-.institutional-copy > .institutional-kicker {
-  margin-top: 0;
-  color: var(--pink);
-  font-size: 0.95rem;
-  font-weight: 700;
 }
 
 .institutional-copy .btn {
@@ -1143,7 +1136,7 @@ a {
 }
 
 .video-poster img {
-  aspect-ratio: 458 / 406;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -1181,10 +1174,6 @@ a {
   .consulta-grid,
   .institutional-layout {
     grid-template-columns: 1fr;
-  }
-
-  .institutional-media {
-    order: 0;
   }
 
   .hero {
