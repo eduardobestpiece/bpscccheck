@@ -316,7 +316,7 @@ async function finishQualifiedLead(nome, telefone, consultas) {
   try {
     const result = await postEvent("registro completo", { nome, telefone, consultas });
     if (result.eventId) {
-      await fireLeadPixels(result.eventId);
+      await fireLeadPixels(result.eventId, telefone);
     }
   } catch (error) {
     console.warn("Não foi possível registrar o lead", error);
@@ -333,7 +333,41 @@ window.addEventListener("pagehide", () => {
   sendProgress("page");
 });
 
-function fireLeadPixels(eventId) {
+const ADS_LEAD_SEND_TO = "AW-11068275414/HPQgCIvL7KwdENb14Z0p";
+const GCLID_KEY = "scc-gclid";
+
+function storedGclid() {
+  const fromUrl = new URLSearchParams(window.location.search).get("gclid") || "";
+  if (fromUrl) {
+    try {
+      sessionStorage.setItem(GCLID_KEY, fromUrl);
+    } catch (error) {
+      return fromUrl;
+    }
+    return fromUrl;
+  }
+  try {
+    return sessionStorage.getItem(GCLID_KEY) || "";
+  } catch (error) {
+    return "";
+  }
+}
+
+function rememberGclidCookie(gclid) {
+  if (!gclid || document.cookie.split("; ").some((item) => item.startsWith("_gcl_aw="))) {
+    return;
+  }
+  const seconds = Math.floor(Date.now() / 1000);
+  document.cookie = `_gcl_aw=GCL.${seconds}.${gclid}; path=/; max-age=7776000; SameSite=Lax`;
+}
+
+async function sha256Hex(value) {
+  const encoded = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", encoded);
+  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function fireLeadPixels(eventId, telefone) {
   return new Promise((resolve) => {
     let settled = false;
     const finish = () => {
@@ -343,12 +377,28 @@ function fireLeadPixels(eventId) {
       settled = true;
       resolve();
     };
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "Lead", {
-        event_id: eventId,
-        event_callback: finish,
-      });
-    }
+    const send = async () => {
+      const phoneDigits = digitsOnly(telefone || "");
+      rememberGclidCookie(storedGclid());
+      if (typeof window.gtag === "function") {
+        const conversion = {
+          send_to: ADS_LEAD_SEND_TO,
+          transaction_id: eventId,
+        };
+        if (phoneDigits) {
+          conversion.user_data = { sha256_phone_number: await sha256Hex(phoneDigits) };
+        }
+        window.gtag("event", "conversion", conversion);
+        window.gtag("event", "Lead", {
+          event_id: eventId,
+          event_callback: finish,
+        });
+      }
+    };
+    send().catch((error) => {
+      console.warn("Não foi possível enviar a conversão", error);
+      finish();
+    });
     if (typeof window.fbq === "function") {
       window.fbq("track", "Lead", {}, { eventID: eventId });
     }

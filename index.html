@@ -14,6 +14,23 @@
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-WWBCSP30L3");
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var gclid = params.get("gclid") || "";
+      try {
+        if (gclid) sessionStorage.setItem("scc-gclid", gclid);
+        else gclid = sessionStorage.getItem("scc-gclid") || "";
+      } catch (error) {}
+      var hasGclidCookie = document.cookie.split("; ").some(function (item) {
+        return item.indexOf("_gcl_aw=") === 0;
+      });
+      if (gclid && !hasGclidCookie) {
+        var seconds = Math.floor(Date.now() / 1000);
+        document.cookie = "_gcl_aw=GCL." + seconds + "." + gclid + "; path=/; max-age=7776000; SameSite=Lax";
+      }
+    })();
+    gtag("config", "AW-11068275414", { allow_enhanced_conversions: true });
+    gtag("event", "conversion", { send_to: "AW-11068275414/N1WpCI7L7KwdENb14Z0p" });
   </script>
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
