@@ -389,7 +389,8 @@ function fireLeadPixels(eventId, telefone) {
           conversion.user_data = { sha256_phone_number: await sha256Hex(phoneDigits) };
         }
         window.gtag("event", "conversion", conversion);
-        window.gtag("event", "Lead", {
+        window.gtag("event", "generate_lead", {
+          send_to: "G-WWBCSP30L3",
           event_id: eventId,
           event_callback: finish,
         });
